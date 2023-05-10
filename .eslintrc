@@ -1,0 +1,68 @@
+{
+  "root": true,
+  "env": {
+		"browser": true,
+		"es2021": true,
+    "node": true
+  },
+	"extends": [
+		"airbnb-base",
+		"airbnb-typescript/base", 
+		"prettier"
+		// "plugin:jest/all"
+	],
+	"overrides": [],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": "tsconfig.json"
+	},
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+		// "jest"
+  ],
+	"ignorePatterns": [
+		"/src/api/components/history/handler.ts", 
+		"/src/api/components/service/mapper.ts", 
+		"/src/api/components/history/service.ts", 
+		"/src/api/components/public-api/service-routes.ts",
+		"/src/api/components/rolling-stock/handler.ts",
+		"/src/api/components/rolling-stock-position/handler.ts",
+		"/src/api/jobs/alert/last-np-reminder/job.ts",
+		"/src/api/jobs/alert/last-np-reminder/mapper.ts",
+		"/src/api/middleware/auth.ts",
+		"/src/api/components/auth/routes.ts",
+		"/src/logs/",
+		"/src/__test__/",
+		"/src/static/",
+		"/src/api/components/anomaly/handler.ts"
+	],
+	"rules": {
+		"no-console":"warn",
+    "import/prefer-default-export": "off",
+		"indent": [
+			"error", 
+			"tab", 
+			{ 
+				"CallExpression": {"arguments": 1},
+				"SwitchCase": 1,
+				"FunctionExpression": {"body": 1}
+			}
+		],
+		// https://copyprogramming.com/howto/airbnb-eslint-prettier-conflict-over-switch-and-case-indentation
+		"no-tabs": ["error", { "allowIndentationTabs": true }],
+    "prettier/prettier":[
+			"error", 
+			{
+				"tabWidth": 2,
+				"useTabs": true,
+				"trailingComma": "all",
+				"semi": true,
+				"singleQuote": true
+			}
+		],
+		"quotes": ["error", "single",  { "allowTemplateLiterals": true, "avoidEscape": true }],
+		"import/no-named-as-default": 0
+	}
+}
